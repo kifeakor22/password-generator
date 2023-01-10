@@ -112,9 +112,9 @@ function getPasswordOptions() {
     } while ((!userOptions.passLength) || (userOptions.passLength < 10)|| (userOptions.passLength> 64) || isNaN(userOptions.passLength)) 
   // prompt user to select character types
      //lowercase
-     userOptions.lowercaseOption = confirm("Do you want your password to contain lowercase letters included?")
+     userOptions.lowercaseOption = confirm("Do you want your password to include lowercase letters?")
      //uppercase
-     userOptions.uppercaseOption = confirm("Do you want your password to contain Uppercase letters included?")
+     userOptions.uppercaseOption = confirm("Do you want your password to include uppercase letters?")
      //numeric
      userOptions.numericOption = confirm("do you want to add numbers")
      userOptions.specailcharacterOption = confirm("Do you want your password to contain specail characters?")
