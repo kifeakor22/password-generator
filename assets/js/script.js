@@ -160,13 +160,10 @@ function generatePassword(userOptions, password) {
     Userpass += selectedCharacters[getRandom(selectedCharacters)];
   }
 
-  return console.log(Userpass); 
+  return Userpass; 
   
 }
 
-getPasswordOptions()
-
-generatePassword(userOptions,password)
 
 
 
@@ -175,10 +172,11 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  getPasswordOptions()
+  var newPassword = generatePassword(userOptions,password);
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = newPassword;
 }
 
 // Add event listener to generate button
