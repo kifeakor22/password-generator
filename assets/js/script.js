@@ -88,15 +88,54 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+let password = {
+  lowercas: lowerCasedCharacters,
+  uppercase: upperCasedCharacters,
+  numeric: numericCharacters,
+  specail: specialCharacters
+}
+
+let userOptions = {
+  passLength: 0,
+  lowercaseOption: false,
+  uppercaseOption: false,
+  numericOption: false,
+  specailcharacterOption: false
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+  // prompt user to enter the lenght of password and convert it to int
+    userOptions.passLength = parseInt(prompt('Enter password length (10-64 characters):'))
+    // check if the user entered a number 
+    if (isNaN(userOptions.passLength)) {
+      alert("please enter a valid number")
+    }
+     // check if password lenght entered is > 10 but < 64
+    if (password.length < 10 || password.passLength> 64){
+      alert("password lenght is invalid please enter a valid length")
+    }
+
+ 
+  // prompt user to select character types
+  
+     //lowercase
+     userOptions.lowercaseOption = confirm("Do you want your password to contain lowercase letters included?")
+     //uppercase
+     userOptions.uppercaseOption = confirm("Do you want your password to contain Uppercase letters included?")
+     //numeric
+      userOptions.uppercaseOption = confirm("Do you want your password to contain Uppercase letters included?")
+     //specail characters
+     userOptions.specailcharacterOption = confirm("Do you want your password to contain specail characters?")
+    // validate each input at least one characters should be selected 
 
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  return arr[Math.floor(Math.random() * arr.length)];
 }
+ console.log(getRandom(numericCharacters))
 
 // Function to generate password with user input
 function generatePassword() {
