@@ -107,7 +107,7 @@ let userOptions = {
 function getPasswordOptions() {
   // prompt user to enter the lenght of password and convert it to int
   do {
-    userOptions.passLength = parseInt(prompt('Enter password length (10-64 characters):'))
+    userOptions.passLength = parseInt(prompt('How long do you want your password to be?( Must be between 10-64 characters):'))
     // keep prompting user untill they enter a number and check if the user entered a number 
     } while ((!userOptions.passLength) || (userOptions.passLength < 10)|| (userOptions.passLength> 64) || isNaN(userOptions.passLength)) 
   // prompt user to select character types
