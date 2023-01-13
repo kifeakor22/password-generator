@@ -103,6 +103,14 @@ let userOptions = {
   specailcharacterOption: false
 }
 
+// using javascripts to get input from html checkbox
+
+let specChar = document.querySelector("#specChar");
+let lowerChar = document.querySelector("#lowerChar")
+let upperChar = document.querySelector("#upperChar")
+let numeric = document.querySelector("#numeric")
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   // prompt user to enter the lenght of password and convert it to int
@@ -112,18 +120,20 @@ function getPasswordOptions() {
     } while ((!userOptions.passLength) || (userOptions.passLength < 10)|| (userOptions.passLength> 64) || isNaN(userOptions.passLength)) 
   // prompt user to select character types
      //lowercase
-     userOptions.lowercaseOption = confirm("Do you want your password to include lowercase letters?")
+     userOptions.lowercaseOption = lowerChar.checked
      //uppercase
-     userOptions.uppercaseOption = confirm("Do you want your password to include uppercase letters?")
+     userOptions.uppercaseOption = upperChar.checked
      //numeric
-     userOptions.numericOption = confirm("do you want to add numbers")
-     userOptions.specailcharacterOption = confirm("Do you want your password to contain specail characters?")
+     userOptions.numericOption = numeric.checked
+     // specail characters
+     userOptions.specailcharacterOption = specChar.checked
     // validate each input at least one characters should be selected 
     if (userOptions.lowercaseOption==false && userOptions.uppercaseOption == false && userOptions.numericOption == false && userOptions.specailcharacterOption == false) {
       alert("you must select at least one option to be included in your password")
     }
 
 }
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
