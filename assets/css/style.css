@@ -49,6 +49,9 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
+.labels {
+  background-color: rgb(200, 226, 200);
+}
 
 .card-body {
   min-height: 100px;
